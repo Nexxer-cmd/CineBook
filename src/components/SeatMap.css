@@ -1,0 +1,206 @@
+.seat-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-6) 0;
+}
+
+/* Screen */
+.seat-map__screen {
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.seat-map__screen-bar {
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--text-tertiary), transparent);
+  border-radius: 2px;
+  margin-bottom: var(--space-2);
+}
+
+.seat-map__screen-label {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  letter-spacing: 3px;
+  font-weight: var(--weight-medium);
+}
+
+/* Layout */
+.seat-map__layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  overflow-x: auto;
+  max-width: 100%;
+  padding: var(--space-4);
+}
+
+/* Seat Row */
+.seat-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.seat-row__label {
+  width: 20px;
+  text-align: center;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+.seat-row__seats {
+  display: flex;
+  gap: var(--space-1);
+  justify-content: center;
+}
+
+/* Seat */
+.seat {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+  flex-shrink: 0;
+}
+
+.seat__label {
+  pointer-events: none;
+}
+
+/* Seat States */
+.seat--standard {
+  background-color: var(--seat-available);
+  border-color: var(--seat-available-border);
+  color: var(--text-secondary);
+}
+
+.seat--standard:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--text-tertiary);
+}
+
+.seat--premium {
+  background-color: rgba(212, 168, 67, 0.15);
+  border-color: var(--seat-premium-border);
+  color: var(--seat-premium);
+}
+
+.seat--premium:hover {
+  background-color: rgba(212, 168, 67, 0.25);
+}
+
+.seat--economy {
+  background-color: var(--seat-available);
+  border-color: var(--seat-available-border);
+  color: var(--text-tertiary);
+}
+
+.seat--economy:hover {
+  background-color: var(--bg-hover);
+}
+
+.seat--selected {
+  background-color: var(--seat-selected);
+  border-color: var(--seat-selected);
+  color: #fff;
+}
+
+.seat--occupied {
+  background-color: var(--seat-occupied);
+  border-color: var(--seat-occupied-border);
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* Legend */
+.seat-map__legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-5);
+  padding: var(--space-4) 0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.legend-box {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+}
+
+.legend-box--available {
+  background-color: var(--seat-available);
+  border-color: var(--seat-available-border);
+}
+
+.legend-box--selected {
+  background-color: var(--seat-selected);
+}
+
+.legend-box--occupied {
+  background-color: var(--seat-occupied);
+  border-color: var(--seat-occupied-border);
+  opacity: 0.4;
+}
+
+.legend-box--premium {
+  background-color: rgba(212, 168, 67, 0.15);
+  border-color: var(--seat-premium-border);
+}
+
+.legend-box--standard {
+  background-color: var(--seat-available);
+  border-color: var(--seat-available-border);
+}
+
+.legend-box--economy {
+  background-color: var(--seat-available);
+  border-color: var(--seat-available-border);
+}
+
+/* Summary */
+.seat-map__summary {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  padding: var(--space-3) var(--space-5);
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+  .seat {
+    width: 26px;
+    height: 26px;
+    font-size: 8px;
+  }
+
+  .seat-row__seats {
+    gap: 2px;
+  }
+
+  .seat-map__legend {
+    gap: var(--space-3);
+  }
+}

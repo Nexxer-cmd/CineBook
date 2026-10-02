@@ -1,0 +1,14 @@
+.cinemas-filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.cinemas-filters__search {
+  max-width: 400px;
+}
+
+.cinemas-grid {
+  padding-bottom: var(--space-16);
+}
